@@ -8,9 +8,9 @@
  Cache Size, Cacheline Size(block size), Associativity(direct-mapped/set-associative/fully-associative), Replacement Policy(LRU/Random)
 
 ## Simulated Cache Hierarchy
-    L1 cache + Memory
-    L1 cache + L2 cache + Memory
-    L1 cache + Victim cache + L2 cache + Memory
+    L1 cache + Memory 					./src/LM
+    L1 cache + L2 cache + Memory			./src/LLM
+    L1 cache + Victim cache + L2 cache + Memory 	./src/LVLM
 
 ## Assumptions
     L1 cache access latency: 1 cycle
