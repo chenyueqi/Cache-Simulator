@@ -15,7 +15,7 @@ int main(int argc ,char** argv)
     }
 
     int i = 1;
-    for( ; i < 2 ; i++)
+    for( ; i < 2 ; i++) /*TODO to change*/
     {
 	if(run(argv[i]))
 	{

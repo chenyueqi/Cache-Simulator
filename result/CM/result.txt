@@ -1,0 +1,2 @@
+| cache size: 64 bytes | cacheline size: 8 bytes |  associative:  4-way-set-associative | replacement policy: LRU
+../../test/swim.trace
