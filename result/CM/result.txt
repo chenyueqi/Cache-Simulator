@@ -1,2 +1,72 @@
 | cache size: 64 bytes | cacheline size: 8 bytes |  associative:  4-way-set-associative | replacement policy: LRU
+
 ../../test/swim.trace
+number of cache accesses: 303193
+number of memory accesses: 6397
+number of cache loads: 220668
+number of cache stores: 82525
+number of memory loads: 592
+number of memory stores: 5805
+average cache hit rate: 0.978901
+cache hit rate for loads: 0.997324
+cache hit rate for stores: 0.934281
+CPU time: 1815902
+CPU time in loads and stores: 942893
+CPI: 3.109877
+
+../../test/mcf.trace
+number of cache accesses: 727230
+number of memory accesses: 179903
+number of cache loads: 5972
+number of cache stores: 721258
+number of memory loads: 137
+number of memory stores: 179766
+average cache hit rate: 0.752619
+cache hit rate for loads: 0.977574
+cache hit rate for stores: 0.800487
+CPU time: 19004008
+CPU time in loads and stores: 18717530
+CPI: 25.738115
+
+../../test/gzip.trace
+number of cache accesses: 481044
+number of memory accesses: 159532
+number of cache loads: 320441
+number of cache stores: 160603
+number of memory loads: 159371
+number of memory stores: 161
+average cache hit rate: 0.668363
+cache hit rate for loads: 0.667847
+cache hit rate for stores: 0.998999
+CPU time: 17036554
+CPU time in loads and stores: 16434244
+CPI: 34.163704
+
+../../test/twolf.trace
+number of cache accesses: 482824
+number of memory accesses: 926
+number of cache loads: 351403
+number of cache stores: 131421
+number of memory loads: 406
+number of memory stores: 520
+average cache hit rate: 0.998082
+cache hit rate for loads: 0.998846
+cache hit rate for stores: 0.996059
+CPU time: 1543627
+CPU time in loads and stores: 575424
+CPI: 1.191788
+
+../../test/gcc.trace
+number of cache accesses: 515683
+number of memory accesses: 5989
+number of cache loads: 318197
+number of cache stores: 197486
+number of memory loads: 1502
+number of memory stores: 4487
+average cache hit rate: 0.988386
+cache hit rate for loads: 0.995302
+cache hit rate for stores: 0.977784
+CPU time: 2139064
+CPU time in loads and stores: 1114583
+CPI: 2.161372
+

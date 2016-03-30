@@ -26,6 +26,7 @@ void init_cache()
     cache_store_num = 0;
     mem_store_num = 0;
     instr_num = 0;
+    cycle_in_instr = 0;
 
     return ;
 }
@@ -63,11 +64,13 @@ int run(char* trace_name)
 
 	p = strtok(NULL , " \n");
 	unsigned int delay = (unsigned int)strtol(p, &pEnd , 10);
-	
+
+	unsigned int old_cycle_in_instr = cycle_in_instr;
+
 	access_cache(instr, addr);
 
 	instr_num++;
-	cycle_num += delay;
+	cycle_num = cycle_num + cycle_in_instr - old_cycle_in_instr + delay;
     }
 
     fclose(trace);
@@ -77,6 +80,11 @@ int run(char* trace_name)
 void access_cache(char instr, unsigned int addr)
 {
     cache_access++;
+    cycle_in_instr += cache_delay;
+    if(instr == 'l')
+	cache_load_num++;
+    else if(instr == 's')
+	cache_store_num++;
 
     unsigned int offset = (addr << (ADDR_set_bit + ADDR_tag_bit)) >> (ADDR_set_bit + ADDR_tag_bit);
     unsigned int index = (addr << ADDR_tag_bit) >> (ADDR_tag_bit + ADDR_offset_bit);
@@ -88,11 +96,6 @@ void access_cache(char instr, unsigned int addr)
 	if((cache[index][i].tag == tag) && (cache[index][i].valid == 1))//cache hit
 	{
 	    cache[index][i].fre++;
-	    if(instr == 'l')
-		cache_load_num++;
-	    else if(instr == 's')
-		cache_store_num++;
-	    cycle_num += cache_delay;
 	    return ;
 	}
     }
@@ -112,14 +115,21 @@ void access_cache(char instr, unsigned int addr)
 	}
     }
 
+    int replaced_way = 0;
+
     if(replacepolicy == 1)//LRU
     {
-    	/*TODO*/
+	int i = 1;
+	for(; i < way_num ; i++)
+	    if(cache[index][i].fre < cache[index][replaced_way].fre)
+		replaced_way = i;
     }
     else if(replacepolicy == 2)//Random
-    {
-    	/*TODO*/
-    }
+	replaced_way = rand() % way_num;
+
+    cache[index][replaced_way].valid = 1;
+    cache[index][replaced_way].tag = tag;
+    cache[index][replaced_way].fre = 1;
 
     return;
 }
@@ -131,8 +141,7 @@ void access_mem(char instr)
 	mem_load_num++;
     else if(instr == 's')
 	mem_store_num++;
-    cycle_num += mem_delay;
+    cycle_in_instr += mem_delay;
 
     return;
 }
-

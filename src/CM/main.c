@@ -15,7 +15,7 @@ int main(int argc ,char** argv)
     }
 
     int i = 1;
-    for( ; i < 2 ; i++) /*TODO to change*/
+    for( ; i < argc-1 ; i++) /*TODO to change to argc -1*/
     {
 	if(run(argv[i]))
 	{
@@ -60,6 +60,7 @@ int write_conf(char* resultfile_name)
 	    case 2: fprintf(conf , "replacement policy: Random\n");break;
 	}
     }
+    fprintf(conf , "\n");
     fclose(conf);
     return 0;
 }
@@ -75,8 +76,19 @@ int write_result(char* trace_name ,char* resultfile_name)
     }
 
     fprintf(result, "%s\n" , trace_name);
-
-    /*TODO write statistic information*/
+    fprintf(result, "number of cache accesses: %ld\n", cache_access);
+    fprintf(result, "number of memory accesses: %ld\n", mem_access);
+    fprintf(result, "number of cache loads: %ld\n", cache_load_num);
+    fprintf(result, "number of cache stores: %ld\n", cache_store_num);
+    fprintf(result, "number of memory loads: %ld\n", mem_load_num);
+    fprintf(result, "number of memory stores: %ld\n", mem_store_num);
+    fprintf(result, "average cache hit rate: %f\n", ((float)cache_access-(float)mem_access)/(float)instr_num);
+    fprintf(result, "cache hit rate for loads: %f\n", (float)cache_load_num/((float)cache_load_num + (float)mem_load_num));
+    fprintf(result, "cache hit rate for stores: %f\n", (float)cache_store_num/((float)cache_store_num + (float)mem_store_num));
+    fprintf(result, "CPU time: %ld\n", cycle_num);
+    fprintf(result, "CPU time in loads and stores: %ld\n", cycle_in_instr);
+    fprintf(result, "CPI: %f\n", (float)cycle_in_instr/(float)instr_num);
+    fprintf(result , "\n");
 
     fclose(result);
     return 0;

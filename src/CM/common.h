@@ -18,7 +18,7 @@
 
 
 
-unsigned long cycle_num;
+unsigned long  cycle_num;
 unsigned long cache_access;
 unsigned long mem_access;
 unsigned long cache_load_num;
@@ -26,6 +26,7 @@ unsigned long mem_load_num;
 unsigned long cache_store_num;
 unsigned long mem_store_num;
 unsigned long instr_num;
+unsigned long cycle_in_instr;
 
 struct line_info
 {
