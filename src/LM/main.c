@@ -15,10 +15,18 @@ int main(int argc ,char** argv)
     }
 
     int i = 1;
-    for( ; i < argc-1 ; i++)
+    for( ; i < 2 ; i++)
     {
-	run(argv[i]);
-	write_result(argv[i] , argv[argc-1]);
+	if(run(argv[i]))
+	{
+	    fprintf(stderr , "Cache Simulation exits due to previous failures\n");
+	    return 1;
+	}
+	if(write_result(argv[i] , argv[argc-1]))
+	{
+	    fprintf(stderr , "Cache Simulation exits due to previous failures\n");
+	    return 1;
+	}
 	init_cache();
     }
     return 0;
@@ -40,7 +48,7 @@ int write_conf(char* resultfile_name)
     switch(associative)
     {
 	case 1: fprintf(conf, "direct-mapeed\n"); break;
-	case 2: fprintf(conf, "%d-way-set-associative | ", way_number); break;
+	case 2: fprintf(conf, "%d-way-set-associative | ", way_num); break;
 	case 3: fprintf(conf, "fully-associative | "); break;
     }
     
