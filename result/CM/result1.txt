@@ -1,0 +1,72 @@
+| cache size: 64KB | cacheline size: 8 bytes |  associative:  direct-mapeed
+
+../../test/swim.trace
+number of cache accesses: 303193
+number of memory accesses: 20226
+number of cache loads: 220668
+number of cache stores: 82525
+number of memory loads: 1611
+number of memory stores: 18615
+average cache hit rate: 0.933290
+cache hit rate for loads: 0.992752
+cache hit rate for stores: 0.815948
+CPU time: 3198802
+CPU time in loads and stores: 2325793
+CPI: 7.670999
+
+../../test/mcf.trace
+number of cache accesses: 727230
+number of memory accesses: 719494
+number of cache loads: 5972
+number of cache stores: 721258
+number of memory loads: 348
+number of memory stores: 719146
+average cache hit rate: 0.010638
+cache hit rate for loads: 0.944937
+cache hit rate for stores: 0.500733
+CPU time: 72963108
+CPU time in loads and stores: 72676630
+CPI: 99.936241
+
+../../test/gzip.trace
+number of cache accesses: 481044
+number of memory accesses: 160153
+number of cache loads: 320441
+number of cache stores: 160603
+number of memory loads: 159477
+number of memory stores: 676
+average cache hit rate: 0.667072
+cache hit rate for loads: 0.667699
+cache hit rate for stores: 0.995808
+CPU time: 17098654
+CPU time in loads and stores: 16496344
+CPI: 34.292797
+
+../../test/twolf.trace
+number of cache accesses: 482824
+number of memory accesses: 5578
+number of cache loads: 351403
+number of cache stores: 131421
+number of memory loads: 1168
+number of memory stores: 4410
+average cache hit rate: 0.988447
+cache hit rate for loads: 0.996687
+cache hit rate for stores: 0.967533
+CPU time: 2008827
+CPU time in loads and stores: 1040624
+CPI: 2.155286
+
+../../test/gcc.trace
+number of cache accesses: 515683
+number of memory accesses: 22375
+number of cache loads: 318197
+number of cache stores: 197486
+number of memory loads: 4830
+number of memory stores: 17545
+average cache hit rate: 0.956611
+cache hit rate for loads: 0.985048
+cache hit rate for stores: 0.918407
+CPU time: 3777664
+CPU time in loads and stores: 2753183
+CPI: 5.338906
+

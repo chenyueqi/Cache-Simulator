@@ -18,23 +18,36 @@ void init_cache()
 	    cache[i][j].fre = 0;
 	}
 
+    i = 0;
+    j = 0;
+    for(; i < set2_num ; i++)
+	for(;j < way2_num ; j++)
+	{
+	    cache2[i][j].valid = 0;
+	    cache2[i][j].tag = 0;
+	    cache2[i][j].fre = 0;
+	}
+
     cycle_num = 0;
-    cache_access = 0;
-    mem_access = 0;
-    cache_load_num = 0;
-    mem_load_num = 0;
-    cache_store_num = 0;
-    mem_store_num = 0;
     instr_num = 0;
     cycle_in_instr = 0;
+
+    cache_access = 0;
+    cache2_access = 0;
+    mem_access = 0;
+
+    cache_load_num = 0;
+    cache2_load_num = 0;
+    mem_load_num = 0;
+
+    cache_store_num = 0;
+    cache2_store_num = 0;
+    mem_store_num = 0;
 
     return ;
 }
 
-void construct_cache()
-{
-    init_cache();
-}
+void construct_cache(){init_cache();}
 
 int run(char* trace_name)
 {

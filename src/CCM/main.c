@@ -42,7 +42,7 @@ int write_conf(char* resultfile_name)
 	return 1;
     }
 
-    fprintf(conf, "| cache size: %dKB | " , cache_size);
+    fprintf(conf, "L1 cache | cache size: %dKB | " , cache_size);
     fprintf(conf, "cacheline size: %d bytes |  " , cacheline_size);
     fprintf(conf, "associative:  ");
     switch(associative)
@@ -60,6 +60,27 @@ int write_conf(char* resultfile_name)
 	    case 2: fprintf(conf , "replacement policy: Random\n");break;
 	}
     }
+
+/*L2 cache configuration write*/
+    fprintf(conf, "L2 cache | cache size: %dKB | " , cache2_size);
+    fprintf(conf, "cacheline size: %d bytes |  " , cacheline2_size);
+    fprintf(conf, "associative:  ");
+    switch(associative2)
+    {
+	case 1: fprintf(conf, "direct-mapeed\n"); break;
+	case 2: fprintf(conf, "%d-way-set-associative | ", way2_num); break;
+	case 3: fprintf(conf, "fully-associative | "); break;
+    }
+
+    if(associative2 != 1)
+    {
+	switch(replacepolicy2)
+	{
+	    case 1: fprintf(conf , "replacement policy: LRU\n");break;
+	    case 2: fprintf(conf , "replacement policy: Random\n");break;
+	}
+    }
+
     fprintf(conf , "\n");
     fclose(conf);
     return 0;
@@ -89,6 +110,8 @@ int write_result(char* trace_name ,char* resultfile_name)
     fprintf(result, "CPU time in loads and stores: %ld\n", cycle_in_instr);
     fprintf(result, "CPI: %f\n", (float)cycle_in_instr/(float)instr_num);
     fprintf(result , "\n");
+
+    /*TODO more cahce statistics info*/
 
     fclose(result);
     return 0;

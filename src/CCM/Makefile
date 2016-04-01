@@ -10,7 +10,7 @@ OBJS = $(CFILES:.c=.o)
 TESTFILE = $(shell find ../../test/ -name "*.trace")
 
 #result files
-RESULTFILE = ../../result/CM/result3.txt
+RESULTFILE = ../../result/CCM/result.txt
 
 cache_simulator: $(OBJS)
 	$(CC) -o cache_simulator $(OBJS) $(CFLAGS)
