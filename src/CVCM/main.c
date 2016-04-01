@@ -119,36 +119,34 @@ int write_result(char* trace_name ,char* resultfile_name)
     fprintf(result, "number of L1 cache accesses: %ld\n", cache_access);
     fprintf(result, "number of victim cache accesses: %ld\n", cachev_access);
     fprintf(result, "number of L2 cache accesses: %ld\n", cache2_access);
-    fprintf(result, "number of memory accesses: %ld\n", mem_access);
+    fprintf(result, "number of memory accesses: %ld\n\n", mem_access);
 
     fprintf(result, "number of L1 cache loads: %ld\n", cache_load_num);
     fprintf(result, "number of victim cache loads: %ld\n", cachev_load_num);
     fprintf(result, "number of L2 cache loads: %ld\n", cache2_load_num);
-    fprintf(result, "number of memory loads: %ld\n", mem_load_num);
+    fprintf(result, "number of memory loads: %ld\n\n", mem_load_num);
 
     fprintf(result, "number of L1 cache stores: %ld\n", cache_store_num);
     fprintf(result, "number of victim cache stores: %ld\n", cachev_store_num);
     fprintf(result, "number of L2 cache stores: %ld\n", cache2_store_num);
-    fprintf(result, "number of memory stores: %ld\n", mem_store_num);
+    fprintf(result, "number of memory stores: %ld\n\n", mem_store_num);
 
     fprintf(result, "average L1 cache hit rate: %f\n", ((float)cache_access-(float)cachev_access-(float)cache2_access-(float)mem_access)/(float)instr_num);
     fprintf(result, "average victim cache hit rate: %f\n", (float)cachev_hit/(float)cachev_access);
-    fprintf(result, "average L2 cache hit rate: %f\n", ((float)cache2_access-(float)mem_access)/((float)cache2_access));
+    fprintf(result, "average L2 cache hit rate: %f\n\n", ((float)cache2_access-(float)mem_access)/((float)cache2_access));
 
-    fprintf(result, "L1 cache hit rate for loads: %f\n", ((float)cache_load_num-(float)cachev_load_hit-(float)cachev_load_num-(float)cache2_load_num-(float)mem_load_num)/((float)cache_load_num));
+    fprintf(result, "L1 cache hit rate for loads: %f\n", ((float)cache_load_num-(float)cachev_load_hit-(float)cache2_load_num-(float)mem_load_num)/((float)cache_load_num));
     fprintf(result, "average victim cache hit rate: %f\n", (float)cachev_load_hit/(float)cachev_load_num);
-    fprintf(result, "L2 cache hit rate for loads: %f\n", ((float)cache2_load_num-(float)mem_load_num)/((float)cache2_load_num));
+    fprintf(result, "L2 cache hit rate for loads: %f\n\n", ((float)cache2_load_num-(float)mem_load_num)/((float)cache2_load_num));
 
     fprintf(result, "L1 cache hit rate for stores: %f\n", ((float)cache_store_num-(float)cachev_store_hit-(float)cache2_store_num-(float)mem_store_num)/((float)cache_store_num));
     fprintf(result, "average victim cache hit rate: %f\n", (float)cachev_store_hit/(float)cachev_store_num);
-    fprintf(result, "L2 cache hit rate for stores: %f\n", ((float)cache2_store_num-(float)mem_store_num)/((float)cache2_store_num));
+    fprintf(result, "L2 cache hit rate for stores: %f\n\n", ((float)cache2_store_num-(float)mem_store_num)/((float)cache2_store_num));
 
     fprintf(result, "CPU time: %ld\n", cycle_num);
     fprintf(result, "CPU time in loads and stores: %ld\n", cycle_in_instr);
     fprintf(result, "CPI: %f\n", (float)cycle_in_instr/(float)instr_num);
     fprintf(result , "\n");
-
-    /*TODO more cahce statistics info*/
 
     fclose(result);
     return 0;

@@ -7,128 +7,158 @@ number of L1 cache accesses: 303193
 number of victim cache accesses: 6772
 number of L2 cache accesses: 6771
 number of memory accesses: 1826
+
 number of L1 cache loads: 220668
 number of victim cache loads: 886
 number of L2 cache loads: 886
 number of memory loads: 272
+
 number of L1 cache stores: 82525
 number of victim cache stores: 5886
 number of L2 cache stores: 5885
 number of memory stores: 1554
+
 average L1 cache hit rate: 0.949310
 average victim cache hit rate: 0.000148
 average L2 cache hit rate: 0.730321
-L1 cache hit rate for loads: 0.990737
+
+L1 cache hit rate for loads: 0.994752
 average victim cache hit rate: 0.000000
 L2 cache hit rate for loads: 0.693002
+
 L1 cache hit rate for stores: 0.909846
 average victim cache hit rate: 0.000170
 L2 cache hit rate for stores: 0.735939
-CPU time: 1433284
-CPU time in loads and stores: 560275
-CPI: 1.847915
+
+CPU time: 1426512
+CPU time in loads and stores: 553503
+CPI: 1.825580
 
 ../../test/mcf.trace
 number of L1 cache accesses: 727230
 number of victim cache accesses: 179987
 number of L2 cache accesses: 179987
 number of memory accesses: 45025
+
 number of L1 cache loads: 5972
 number of victim cache loads: 191
 number of L2 cache loads: 191
 number of memory loads: 80
+
 number of L1 cache stores: 721258
 number of victim cache stores: 179796
 number of L2 cache stores: 179796
 number of memory stores: 44945
+
 average L1 cache hit rate: 0.443094
 average victim cache hit rate: 0.000000
 average L2 cache hit rate: 0.749843
-L1 cache hit rate for loads: 0.922639
+
+L1 cache hit rate for loads: 0.954622
 average victim cache hit rate: 0.000000
 L2 cache hit rate for loads: 0.581152
+
 L1 cache hit rate for stores: 0.688404
 average victim cache hit rate: 0.000000
 L2 cache hit rate for stores: 0.750022
-CPU time: 7496065
-CPU time in loads and stores: 7209587
-CPI: 9.913765
+
+CPU time: 7316078
+CPU time in loads and stores: 7029600
+CPI: 9.666268
 
 ../../test/gzip.trace
 number of L1 cache accesses: 481044
 number of victim cache accesses: 159604
 number of L2 cache accesses: 159576
 number of memory accesses: 157853
+
 number of L1 cache loads: 320441
 number of victim cache loads: 159423
 number of L2 cache loads: 159410
 number of memory loads: 157836
+
 number of L1 cache stores: 160603
 number of victim cache stores: 181
 number of L2 cache stores: 166
 number of memory stores: 17
+
 average L1 cache hit rate: 0.008338
 average victim cache hit rate: 0.000175
 average L2 cache hit rate: 0.010797
-L1 cache hit rate for loads: -0.487581
+
+L1 cache hit rate for loads: 0.009930
 average victim cache hit rate: 0.000082
 L2 cache hit rate for loads: 0.009874
+
 L1 cache hit rate for stores: 0.998767
 average victim cache hit rate: 0.082873
 L2 cache hit rate for stores: 0.897590
-CPU time: 18624018
-CPU time in loads and stores: 18021708
-CPI: 37.463741
+
+CPU time: 18464414
+CPU time in loads and stores: 17862104
+CPI: 37.131954
 
 ../../test/twolf.trace
 number of L1 cache accesses: 482824
 number of victim cache accesses: 3198
 number of L2 cache accesses: 2259
 number of memory accesses: 423
+
 number of L1 cache loads: 351403
 number of victim cache loads: 1446
 number of L2 cache loads: 1055
 number of memory loads: 186
+
 number of L1 cache stores: 131421
 number of victim cache stores: 1752
 number of L2 cache stores: 1204
 number of memory stores: 237
+
 average L1 cache hit rate: 0.987822
 average victim cache hit rate: 0.293621
 average L2 cache hit rate: 0.812749
-L1 cache hit rate for loads: 0.991241
+
+L1 cache hit rate for loads: 0.995356
 average victim cache hit rate: 0.270401
 L2 cache hit rate for loads: 0.823697
+
 L1 cache hit rate for stores: 0.984865
 average victim cache hit rate: 0.312785
 L2 cache hit rate for stores: 0.803156
-CPU time: 1519115
-CPU time in loads and stores: 550912
-CPI: 1.141020
+
+CPU time: 1515917
+CPU time in loads and stores: 547714
+CPI: 1.134397
 
 ../../test/gcc.trace
 number of L1 cache accesses: 515683
 number of victim cache accesses: 12012
 number of L2 cache accesses: 9442
 number of memory accesses: 441
+
 number of L1 cache loads: 318197
 number of victim cache loads: 5691
 number of L2 cache loads: 4194
 number of memory loads: 323
+
 number of L1 cache stores: 197486
 number of victim cache stores: 6321
 number of L2 cache stores: 5248
 number of memory stores: 118
+
 average L1 cache hit rate: 0.957542
 average victim cache hit rate: 0.213953
 average L2 cache hit rate: 0.953294
-L1 cache hit rate for loads: 0.963215
+
+L1 cache hit rate for loads: 0.981100
 average victim cache hit rate: 0.263047
 L2 cache hit rate for loads: 0.922985
+
 L1 cache hit rate for stores: 0.967395
 average victim cache hit rate: 0.169752
 L2 cache hit rate for stores: 0.977515
-CPU time: 1690696
-CPU time in loads and stores: 666215
-CPI: 1.291908
+
+CPU time: 1678684
+CPU time in loads and stores: 654203
+CPI: 1.268615
 

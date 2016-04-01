@@ -11,6 +11,7 @@ void enter_victim_cache(unsigned int tag, unsigned int index);
 
 void init_cache()
 {
+    /*initial L1 cache*/
     int i = 0;
     int j = 0;
     for(; i < set_num ; i++)
@@ -20,7 +21,7 @@ void init_cache()
 	    cache[i][j].tag = 0;
 	    cache[i][j].fre = 0;
 	}
-
+    /*initial victim cache*/
     i = 0;
     j = 0;
     for(; i < setv_num ; i++)
@@ -31,6 +32,7 @@ void init_cache()
 	    cachev[i][j].fre = 0;
 	}
 
+    /*initial L2 cache*/
     i = 0;
     j = 0;
     for(; i < set2_num ; i++)
@@ -134,7 +136,7 @@ void access_cache(char instr, unsigned int addr)
     }
 
     //visit victim cache
-    if(access_victim_cache(instr , addr))
+    if(access_victim_cache(instr , addr) == 1)
 	return;
 
     //visit L2 cache 
@@ -175,7 +177,8 @@ void access_cache(char instr, unsigned int addr)
 
 void enter_victim_cache(unsigned int tag , unsigned int index)
 {
-    unsigned int new_tag = tag << ADDR_index_bit+ index;
+    unsigned int new_tag = tag << ADDR_index_bit + index;
+
     int i =0;
     for(; i < wayv_num ; i++)
     {
