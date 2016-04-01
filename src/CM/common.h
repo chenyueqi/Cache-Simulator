@@ -4,17 +4,17 @@
 #define cache_delay 1
 #define mem_delay 100
 
-#define cache_size 8
-#define cacheline_size 64
-#define associative 3 	// 1: direct 2: set-associative 3: fully-associative
-#define way_num 128 	// direct way_number = 1; fully-associative = cache_size*1024/cacheline_size 
+#define cache_size 32
+#define cacheline_size 32
+#define associative 2 	// 1: direct 2: set-associative 3: fully-associative
+#define way_num 4 	// direct way_number = 1; fully-associative = cache_size*1024/cacheline_size 
 #define set_num cache_size*1024/(cacheline_size * way_num)
 
-#define ADDR_offset_bit 6 // 2^ADDR_offset_bit = cacheline_size
-#define ADDR_index_bit 0  // 2^ADDR_index_bit = set_num
-#define ADDR_tag_bit 26   // 32 - ADDR_offset_bit - ADDR_set_bit
+#define ADDR_offset_bit 5 // 2^ADDR_offset_bit = cacheline_size
+#define ADDR_index_bit 8  // 2^ADDR_index_bit = set_num
+#define ADDR_tag_bit 19   // 32 - ADDR_offset_bit - ADDR_set_bit
 
-#define replacepolicy 2 // 1: LRU 2: Random
+#define replacepolicy 1 // 1: LRU 2: Random
 
 
 

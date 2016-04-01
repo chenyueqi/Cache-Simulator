@@ -1,0 +1,103 @@
+L1 cache | cache size: 32KB | cacheline size: 32 bytes |  associative:  4-way-set-associative | replacement policy: LRU
+L2 cache | cache size: 2KB | cacheline size: 128 bytes |  associative:  8-way-set-associative | replacement policy: LRU
+
+../../test/swim.trace
+number of L1 cache accesses: 303193
+number of L2 cache accesses: 6772
+number of memory accesses: 1826
+number of L1 cache loads: 220668
+number of L2 cache loads: 886
+number of memory loads: 272
+number of L1 cache stores: 82525
+number of L2 cache stores: 5886
+number of memory stores: 1554
+average L1 cache hit rate: 0.971642
+average L2 cache hit rate: 0.730360
+L1 cache hit rate for loads: 0.994752
+L2 cache hit rate for loads: 0.693002
+L1 cache hit rate for stores: 0.909846
+L2 cache hit rate for stores: 0.735984
+CPU time: 1426522
+CPU time in loads and stores: 553513
+CPI: 1.825613
+
+../../test/mcf.trace
+number of L1 cache accesses: 727230
+number of L2 cache accesses: 179987
+number of memory accesses: 45025
+number of L1 cache loads: 5972
+number of L2 cache loads: 191
+number of memory loads: 80
+number of L1 cache stores: 721258
+number of L2 cache stores: 179796
+number of memory stores: 44945
+average L1 cache hit rate: 0.690590
+average L2 cache hit rate: 0.749843
+L1 cache hit rate for loads: 0.954622
+L2 cache hit rate for loads: 0.581152
+L1 cache hit rate for stores: 0.688404
+L2 cache hit rate for stores: 0.750022
+CPU time: 7316078
+CPU time in loads and stores: 7029600
+CPI: 9.666268
+
+../../test/gzip.trace
+number of L1 cache accesses: 481044
+number of L2 cache accesses: 159577
+number of memory accesses: 157854
+number of L1 cache loads: 320441
+number of L2 cache loads: 159410
+number of memory loads: 157836
+number of L1 cache stores: 160603
+number of L2 cache stores: 167
+number of memory stores: 18
+average L1 cache hit rate: 0.340121
+average L2 cache hit rate: 0.010797
+L1 cache hit rate for loads: 0.009971
+L2 cache hit rate for loads: 0.009874
+L1 cache hit rate for stores: 0.998848
+L2 cache hit rate for stores: 0.892216
+CPU time: 18464524
+CPU time in loads and stores: 17862214
+CPI: 37.132183
+
+../../test/twolf.trace
+number of L1 cache accesses: 482824
+number of L2 cache accesses: 2263
+number of memory accesses: 424
+number of L1 cache loads: 351403
+number of L2 cache loads: 1058
+number of memory loads: 186
+number of L1 cache stores: 131421
+number of L2 cache stores: 1205
+number of memory stores: 238
+average L1 cache hit rate: 0.994435
+average L2 cache hit rate: 0.812638
+L1 cache hit rate for loads: 0.996460
+L2 cache hit rate for loads: 0.824197
+L1 cache hit rate for stores: 0.989020
+L2 cache hit rate for stores: 0.802490
+CPU time: 1516057
+CPU time in loads and stores: 547854
+CPI: 1.134687
+
+../../test/gcc.trace
+number of L1 cache accesses: 515683
+number of L2 cache accesses: 9444
+number of memory accesses: 443
+number of L1 cache loads: 318197
+number of L2 cache loads: 4194
+number of memory loads: 323
+number of L1 cache stores: 197486
+number of L2 cache stores: 5250
+number of memory stores: 120
+average L1 cache hit rate: 0.980827
+average L2 cache hit rate: 0.953092
+L1 cache hit rate for loads: 0.985804
+L2 cache hit rate for loads: 0.922985
+L1 cache hit rate for stores: 0.972808
+L2 cache hit rate for stores: 0.977143
+CPU time: 1678904
+CPU time in loads and stores: 654423
+CPI: 1.269041
+

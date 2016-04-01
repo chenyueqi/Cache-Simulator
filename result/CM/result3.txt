@@ -4,12 +4,12 @@
 number of cache accesses: 303193
 number of memory accesses: 5905
 number of cache loads: 220668
-number of cache stores: 82525
 number of memory loads: 2336
+number of cache stores: 82525
 number of memory stores: 3569
 average cache hit rate: 0.980524
-cache hit rate for loads: 0.989525
-cache hit rate for stores: 0.958545
+cache hit rate for loads: 0.989414
+cache hit rate for stores: 0.956752
 CPU time: 1766702
 CPU time in loads and stores: 893693
 CPI: 2.947604
@@ -18,12 +18,12 @@ CPI: 2.947604
 number of cache accesses: 727230
 number of memory accesses: 90211
 number of cache loads: 5972
-number of cache stores: 721258
 number of memory loads: 246
+number of cache stores: 721258
 number of memory stores: 89965
 average cache hit rate: 0.875953
-cache hit rate for loads: 0.960437
-cache hit rate for stores: 0.889100
+cache hit rate for loads: 0.958808
+cache hit rate for stores: 0.875267
 CPU time: 10034808
 CPU time in loads and stores: 9748330
 CPI: 13.404741
@@ -32,11 +32,11 @@ CPI: 13.404741
 number of cache accesses: 481044
 number of memory accesses: 160855
 number of cache loads: 320441
-number of cache stores: 160603
 number of memory loads: 160730
+number of cache stores: 160603
 number of memory stores: 125
 average cache hit rate: 0.665613
-cache hit rate for loads: 0.665961
+cache hit rate for loads: 0.498410
 cache hit rate for stores: 0.999222
 CPU time: 17168854
 CPU time in loads and stores: 16566544
@@ -46,12 +46,12 @@ CPI: 34.438728
 number of cache accesses: 482824
 number of memory accesses: 1978
 number of cache loads: 351403
-number of cache stores: 131421
 number of memory loads: 1185
+number of cache stores: 131421
 number of memory stores: 793
 average cache hit rate: 0.995903
-cache hit rate for loads: 0.996639
-cache hit rate for stores: 0.994002
+cache hit rate for loads: 0.996628
+cache hit rate for stores: 0.993966
 CPU time: 1648827
 CPU time in loads and stores: 680624
 CPI: 1.409673
@@ -60,12 +60,12 @@ CPI: 1.409673
 number of cache accesses: 515683
 number of memory accesses: 7363
 number of cache loads: 318197
-number of cache stores: 197486
 number of memory loads: 4221
+number of cache stores: 197486
 number of memory stores: 3142
 average cache hit rate: 0.985722
-cache hit rate for loads: 0.986908
-cache hit rate for stores: 0.984339
+cache hit rate for loads: 0.986735
+cache hit rate for stores: 0.984090
 CPU time: 2276464
 CPU time in loads and stores: 1251983
 CPI: 2.427815

@@ -4,6 +4,7 @@
 #include"common.h"
 
 void access_cache(char instr, unsigned int addr);
+void access_cache2(char instr, unsigned int addr);
 void access_mem(char instr);
 
 void init_cache()
@@ -114,7 +115,7 @@ void access_cache(char instr, unsigned int addr)
     }
 
     //cache miss
-    access_mem(instr);
+    access_cache2(instr , addr);
 
     i = 0;
     for(; i < way_num ; i++)
@@ -143,6 +144,63 @@ void access_cache(char instr, unsigned int addr)
     cache[index][replaced_way].valid = 1;
     cache[index][replaced_way].tag = tag;
     cache[index][replaced_way].fre = 1;
+
+    return;
+}
+
+void access_cache2(char instr, unsigned int addr)
+{
+    cache2_access++;
+    cycle_in_instr += cache2_delay;
+    if(instr == 'l')
+	cache2_load_num++;
+    else if(instr == 's')
+	cache2_store_num++;
+
+    unsigned int offset = (addr << (ADDR2_index_bit + ADDR2_tag_bit)) >> (ADDR2_index_bit + ADDR2_tag_bit);
+    unsigned int index = (associative2 == 3)?0:(addr << ADDR2_tag_bit) >> (ADDR2_tag_bit + ADDR2_offset_bit);// in fully-associative, later could be wrong
+    unsigned int tag = addr >> (ADDR2_index_bit + ADDR2_offset_bit);
+
+    int i = 0;
+    for(; i < way2_num ; i++)
+    {
+	if((cache2[index][i].tag == tag) && (cache2[index][i].valid == 1))//cache hit
+	{
+	    cache2[index][i].fre++;
+	    return ;
+	}
+    }
+
+    //cache miss
+    access_mem(instr);
+
+    i = 0;
+    for(; i < way2_num ; i++)
+    {
+	if(cache2[index][i].valid == 0) // exsit empty way
+	{
+	    cache2[index][i].valid = 1;
+	    cache2[index][i].tag = tag;
+	    cache2[index][i].fre = 1;
+	    return;
+	}
+    }
+
+    int replaced_way = 0;
+
+    if(replacepolicy2 == 1)//LRU
+    {
+	int i = 1;
+	for(; i < way2_num ; i++)
+	    if(cache2[index][i].fre < cache2[index][replaced_way].fre)
+		replaced_way = i;
+    }
+    else if(replacepolicy2 == 2)//Random
+	replaced_way = rand() % way2_num;
+
+    cache2[index][replaced_way].valid = 1;
+    cache2[index][replaced_way].tag = tag;
+    cache2[index][replaced_way].fre = 1;
 
     return;
 }
