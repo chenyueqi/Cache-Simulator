@@ -1,5 +1,5 @@
 L1 cache | cache size: 32KB | cacheline size: 32 bytes |  associative:  4-way-set-associative | replacement policy: LRU
-L2 cache | cache size: 2KB | cacheline size: 128 bytes |  associative:  8-way-set-associative | replacement policy: LRU
+L2 cache | cache size: 2MB | cacheline size: 128 bytes |  associative:  8-way-set-associative | replacement policy: LRU
 
 ../../test/swim.trace
 number of L1 cache accesses: 303193
@@ -11,11 +11,11 @@ number of memory loads: 272
 number of L1 cache stores: 82525
 number of L2 cache stores: 5886
 number of memory stores: 1554
-average L1 cache hit rate: 0.971642
+average L1 cache hit rate: 0.977664
 average L2 cache hit rate: 0.730360
-L1 cache hit rate for loads: 0.994752
+L1 cache hit rate for loads: 0.995985
+L1 cache hit rate for stores: 0.928676
 L2 cache hit rate for loads: 0.693002
-L1 cache hit rate for stores: 0.909846
 L2 cache hit rate for stores: 0.735984
 CPU time: 1426522
 CPU time in loads and stores: 553513
@@ -31,11 +31,11 @@ number of memory loads: 80
 number of L1 cache stores: 721258
 number of L2 cache stores: 179796
 number of memory stores: 44945
-average L1 cache hit rate: 0.690590
+average L1 cache hit rate: 0.752503
 average L2 cache hit rate: 0.749843
-L1 cache hit rate for loads: 0.954622
+L1 cache hit rate for loads: 0.968017
+L1 cache hit rate for stores: 0.750719
 L2 cache hit rate for loads: 0.581152
-L1 cache hit rate for stores: 0.688404
 L2 cache hit rate for stores: 0.750022
 CPU time: 7316078
 CPU time in loads and stores: 7029600
@@ -51,11 +51,11 @@ number of memory loads: 157836
 number of L1 cache stores: 160603
 number of L2 cache stores: 167
 number of memory stores: 18
-average L1 cache hit rate: 0.340121
+average L1 cache hit rate: 0.668269
 average L2 cache hit rate: 0.010797
-L1 cache hit rate for loads: 0.009971
+L1 cache hit rate for loads: 0.502529
+L1 cache hit rate for stores: 0.998960
 L2 cache hit rate for loads: 0.009874
-L1 cache hit rate for stores: 0.998848
 L2 cache hit rate for stores: 0.892216
 CPU time: 18464524
 CPU time in loads and stores: 17862214
@@ -71,11 +71,11 @@ number of memory loads: 186
 number of L1 cache stores: 131421
 number of L2 cache stores: 1205
 number of memory stores: 238
-average L1 cache hit rate: 0.994435
+average L1 cache hit rate: 0.995313
 average L2 cache hit rate: 0.812638
-L1 cache hit rate for loads: 0.996460
+L1 cache hit rate for loads: 0.996989
+L1 cache hit rate for stores: 0.990831
 L2 cache hit rate for loads: 0.824197
-L1 cache hit rate for stores: 0.989020
 L2 cache hit rate for stores: 0.802490
 CPU time: 1516057
 CPU time in loads and stores: 547854
@@ -91,11 +91,11 @@ number of memory loads: 323
 number of L1 cache stores: 197486
 number of L2 cache stores: 5250
 number of memory stores: 120
-average L1 cache hit rate: 0.980827
+average L1 cache hit rate: 0.981686
 average L2 cache hit rate: 0.953092
-L1 cache hit rate for loads: 0.985804
+L1 cache hit rate for loads: 0.986820
+L1 cache hit rate for stores: 0.973416
 L2 cache hit rate for loads: 0.922985
-L1 cache hit rate for stores: 0.972808
 L2 cache hit rate for stores: 0.977143
 CPU time: 1678904
 CPU time in loads and stores: 654423

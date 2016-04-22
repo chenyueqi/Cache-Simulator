@@ -45,6 +45,14 @@ void init_cache()
     cache2_store_num = 0;
     mem_store_num = 0;
 
+    cache_hit = 0;
+    cache2_hit = 0;
+
+    cache_load_hit = 0;
+    cache2_load_hit = 0;
+
+    cache_store_hit = 0;
+    cache2_store_hit = 0;
     return ;
 }
 
@@ -110,6 +118,11 @@ void access_cache(char instr, unsigned int addr)
 	if((cache[index][i].tag == tag) && (cache[index][i].valid == 1))//cache hit
 	{
 	    cache[index][i].fre++;
+	    cache_hit++;
+	    if(instr == 'l')
+		cache_load_hit++;
+	    else if(instr == 's')
+		cache_store_hit++;
 	    return ;
 	}
     }
@@ -167,6 +180,11 @@ void access_cache2(char instr, unsigned int addr)
 	if((cache2[index][i].tag == tag) && (cache2[index][i].valid == 1))//cache hit
 	{
 	    cache2[index][i].fre++;
+	    cache2_hit++;
+	    if(instr == 'l')
+		cache2_load_hit++;
+	    else if(instr == 's')
+		cache2_store_hit++;
 	    return ;
 	}
     }

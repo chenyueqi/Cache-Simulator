@@ -68,9 +68,17 @@ unsigned long cachev_store_num;
 unsigned long cache2_store_num;
 unsigned long mem_store_num;
 
+unsigned long cache_hit;
 unsigned long cachev_hit;
+unsigned long cache2_hit;
+
+unsigned long cache_load_hit;
 unsigned long cachev_load_hit;
+unsigned long cache2_load_hit;
+
+unsigned long cache_store_hit;
 unsigned long cachev_store_hit;
+unsigned long cache2_store_hit;
 
 struct line_info
 {

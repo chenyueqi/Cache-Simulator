@@ -8,9 +8,9 @@
  Cache Size, Cacheline Size(block size), Associativity(direct-mapped/set-associative/fully-associative), Replacement Policy(LRU/Random)
 
 ## Simulated Cache Hierarchy
-    L1 cache + Memory 					./src/LM
-    L1 cache + L2 cache + Memory			./src/LLM
-    L1 cache + Victim cache + L2 cache + Memory 	./src/LVLM
+    L1 cache + Memory 					./src/CM
+    L1 cache + L2 cache + Memory			./src/CCM
+    L1 cache + Victim cache + L2 cache + Memory 	./src/CVCM
 
 ## Assumptions
     L1 cache access latency: 1 cycle
@@ -29,5 +29,30 @@
     Cache hit rate for stores
     CPU time(in cycle) and CPI
 
+    Different Cache Hierarchy's result in ./result/CM ./result/CCM ./result/CVCM respectively
+
 ## Trace
-    SPEC2000 CPU benchmarks
+    SPEC2000 CPU benchmarks  ./test/
+
+## file structure
+    take CM(L1 cache + Memory) for example
+
+    ./README.md .................. file you are opening
+    ./report ..................... directory for report
+    ./result ..................... directory for result
+    	./result/CM .............. directory for L1 cache + Memory result
+	./result/CCM ............. directory for L1 cache + L2 cache + Memory result
+	./result/CVCM ............ directory for L1 cache + Victim cache + L2 cache + Memory result
+    ./src ........................ directory for source code
+    	./src/CM ................. directory for L1 cache + Memory source code
+	    ./src/CM/Makefile .... Makefile
+	    ./src/CM/main.c ...... main function
+	    ./src/CM/common.h .... common declarations 
+	    ./src/CM/cache.h ..... cache implementation	
+	./src/CCM ................ directory for L1 cache + L2 cache + Memory source code
+	    ...
+	./src/CVCM ............... directory for L1 cache + Victim cache + L2 cache + Memory source code
+	    ...
+     ./test ...................... directory for SPEC2000 CPU benchmarks 
+
+
